@@ -1,0 +1,12 @@
+h4.d-flex.justify-content-between
+  span Listing posts
+  = link_to 'New Post', new_post_path, class: 'btn btn-primary'
+
+
+- @posts.each do |post|
+  = link_to edit_post_path(post), class: 'text-decoration-none' do
+    .card.mb-3
+      .card-body
+        h5.card-title.text-dark.mb-1 = post.title
+        p.text-secondary.mb-0 = post.description
+      
